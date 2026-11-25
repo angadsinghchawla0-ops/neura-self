@@ -20,7 +20,7 @@ jobs:
     env:
       GRADLE_OPTS: "-Xmx2g -XX:MaxMetaspaceSize=512m"
       _JAVA_OPTIONS: "-Xmx2g"
-      ANDROID_SDK_ROOT: "/opt/android-sdk"
+      PIP_NO_CACHE_DIR: 1
 
     steps:
       - name: Free up disk space
@@ -33,6 +33,7 @@ jobs:
           sudo rm -rf /opt/hostedtoolcache/go
           sudo rm -rf /opt/hostedtoolcache/node
           sudo rm -rf /opt/hostedtoolcache/python
+          sudo rm -rf /opt/hostedtoolcache/Ruby
           sudo apt-get clean
           docker system prune -af --volumes 2>/dev/null || true
           echo "=== After cleanup ==="
@@ -40,6 +41,8 @@ jobs:
 
       - name: Checkout repository
         uses: actions/checkout@v4
+        with:
+          fetch-depth: 1
 
       - name: Set up Python
         uses: actions/setup-python@v5
@@ -63,11 +66,15 @@ jobs:
 
       - name: Build APK
         run: |
+          # Use shallow p4a clone to save disk space
+          export P4A_BOOTSTRAP=sdl2
+          export PIP_NO_CACHE_DIR=1
           python rootmeow_apk.py
         env:
           BUILDOZER_WARN_ON_ROOT: 1
           GRADLE_OPTS: "-Xmx2g -XX:MaxMetaspaceSize=512m"
           _JAVA_OPTIONS: "-Xmx2g"
+          PIP_NO_CACHE_DIR: 1
 
       - name: Upload APK artifact
         uses: actions/upload-artifact@v4
