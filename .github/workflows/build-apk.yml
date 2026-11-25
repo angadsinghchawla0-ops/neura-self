@@ -20,7 +20,6 @@ jobs:
     env:
       GRADLE_OPTS: "-Xmx2g -XX:MaxMetaspaceSize=512m"
       _JAVA_OPTIONS: "-Xmx2g"
-      PIP_NO_CACHE_DIR: 1
 
     steps:
       - name: Free up disk space
