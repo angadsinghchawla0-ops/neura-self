@@ -1,0 +1,9 @@
+{
+  "log_level": "INFO",
+  "log_to_file": true,
+  "log_file": "rootmeow.log",
+  "max_log_size_mb": 10,
+  "backup_count": 5,
+  "console_output": true,
+  "rich_formatting": true
+}

@@ -1,0 +1,30 @@
+# ROOTMEOW - Core Requirements
+# Discord.py-self (self-bot library)
+discord.py-self @ git+https://github.com/dolfies/discord.py-self@20ae80b398ec83fa272f0a96812140e14868c88
+
+# Web Framework
+Flask==2.3.0
+
+# HTTP Clients
+requests==2.31.0
+aiohttp==3.12.15
+aiohttp-socks==0.10.1
+
+# Terminal UI
+rich==14.2.0
+
+# Mobile/Platform
+plyer==2.1.0
+playsound3==3.3.0
+
+# Configuration
+python-dotenv==1.2.1
+
+# Captcha Solving
+nopecha
+
+# APK Build (optional - install separately for mobile builds)
+# kivy==2.3.0
+# kivymd==1.2.0
+# buildozer
+# cython

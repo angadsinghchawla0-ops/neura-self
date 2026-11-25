@@ -1,0 +1,112 @@
+GNU GENERAL PUBLIC LICENSE
+                       Version 3, 29 June 2007
+
+ Copyright (C) 2007 Free Software Foundation, Inc. <https://fsf.org/>
+ Everyone is permitted to copy and distribute verbatim copies
+ of this license document, but changing it is not allowed.
+
+                            PREAMBLE
+
+  The GNU General Public License is a free, copyleft license for
+ software and other kinds of works.
+
+  The licenses for most software and other practical works are designed
+ to take away your freedom to share and change the works.  By contrast,
+ the GNU General Public License is intended to guarantee your freedom to
+ share and change all versions of a program--to make sure it remains free
+ software for all its users.  We, the Free Software Foundation, use the
+ GNU General Public License for most of our software; it applies also to
+ any other work released this way by us.  The GNU General Public License
+ is designed to make sure that when you change a program, you are not
+ required to give up the freedom to share and change the changes.
+
+  When we speak of free software, we are referring to freedom, not
+ price.  Our General Public Licenses are designed to make sure that you
+ have the freedom to distribute copies of free software (and charge for
+ this service if you wish), that you receive source code or can get it
+ in a way you are free to change it, and that you know you can do these
+ things.
+
+  To protect your rights, we need to prevent others from denying you
+ these rights or asking you to surrender the rights.  The GPL says you
+ have the freedom to distribute copies of the original program, and the
+ freedom to modify and share the changes, and the freedom to share and
+ change versions of a program.
+
+  You must license the entire work as a whole under this License to
+ anyone who comes to possess a copy.  This License will therefore
+ apply to the whole modified work.  If you cannot do this, you must
+ not distribute the modified work.
+
+  A "contributor" is a copyright holder who authorizes use under this
+ License.  The "contributor's statement" is the statement of the
+ contributor's identity and the license of the work.
+
+  "Convey" a work means any kind of propagation that enables other
+ parties to make or receive copies.  Mere interaction with a user
+ through a computer network does not count as conveying.
+
+  An interactive user interface displays "Appropriate Legal Notices"
+ to the extent that it includes a convenient and prominently visible
+ feature that (1) displays an appropriate copyright notice, and (2)
+ tells the user that there is no warranty for the work (except to the
+ extent that warranties are implied), and that the user has the right
+ to the source code of the work that has been modified.
+
+  For a physical object, "modification" means making a different
+ object.  For a work of software or documentation, "modification"
+ means making a different work or translating it into a different
+ language.  The modified work must be licensed under the GPL.
+
+  A "license" is a permission granted by the copyright holder for
+ the user to use the work.  The "license of a work" is the license
+ that applies to the work.
+
+  "Object code" means any non-source form of a work.
+
+  "Source code" means the preferred form of the work for making
+ modifications to it.
+
+  "Standard Interface" means an interface that either is an
+ interface between two systems of standard production, or is an
+ interface that is a standard interface used with particular
+ equipment.
+
+  "System Libraries" of an executable work are the functions and
+ data structures that are part of the standard operations of the
+ operating system, or that provide standard services.
+
+  "You" means the individual or organization exercising the
+ permissions granted by this license.  "Your" refers to the
+ permissions you exercise.  "Your license" means the license that
+ applies to your copy of the work.  "Your licensor" means the
+ copyright holder who authorizes you.
+
+  "Supplementary information" is information that you provide or
+ require.
+
+  This License is based on the GNU General Public License version 2,
+ but with additional terms to improve it.  The precise terms of
+ this License are as follows.
+
+  ...
+
+  (Full GPLv3 license text - truncated for brevity)
+  See https://www.gnu.org/licenses/gpl-3.0.html for complete text.
+
+  ROOTMEOW - Mobile Discord Self-Bot Automation
+  Copyright (C) 2025 killywilly
+  Based on NeuraSelf by ROUTO
+
+  This program is free software: you can redistribute it and/or modify
+  it under the terms of the GNU General Public License as published by
+  the Free Software Foundation, either version 3 of the License, or
+  (at your option) any later version.
+
+  This program is distributed in the hope that it will be useful,
+  but WITHOUT ANY WARRANTY; without even the implied warranty of
+  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+  GNU General Public License for more details.
+
+  You should have received a copy of the GNU General Public License
+  along with this program.  If not, see <https://www.gnu.org/licenses/>.

@@ -1,0 +1,274 @@
+# ROOTMEOW Kivy UI Definitions
+# Mobile-optimized UI for the APK build
+
+#:import Factory kivy.factory.Factory
+#:import Window kivy.core.window.Window
+#:import Color kivy.utils.Color
+#:import dp kivy.metrics.dp
+#:import sp kivy.metrics.sp
+
+<RootMeowApp>:
+    theme_cls: app.theme_cls
+    screen_manager: screen_manager
+
+    ScreenManager:
+        id: screen_manager
+        transition: NoTransition
+
+        # Main Dashboard Screen
+        MDScreen:
+            name: 'dashboard'
+            MDBoxLayout:
+                orientation: 'vertical'
+
+                # Top App Bar
+                MDTopAppBar:
+                    title: "ROOTMEOW"
+                    elevation: 4
+                    md_bg_color: app.theme_cls.primary_color
+                    specific_text_color: 1, 1, 1, 1
+                    right_action_items:
+                        [["cog", lambda x: app.open_settings()],
+                         ["account", lambda x: app.open_accounts()]]
+
+                # Content
+                MDScrollView:
+                    MDBoxLayout:
+                        id: dashboard_content
+                        orientation: 'vertical'
+                        padding: dp(16)
+                        spacing: dp(16)
+                        adaptive_height: True
+
+                        # Stats Cards
+                        MDBoxLayout:
+                            orientation: 'vertical'
+                            spacing: dp(12)
+                            size_hint_y: None
+                            height: self.minimum_height
+
+                            MDLabel:
+                                text: "Account Stats"
+                                font_style: "H6"
+                                theme_text_color: "Primary"
+                                size_hint_y: None
+                                height: dp(32)
+
+                            MDGridLayout:
+                                id: stats_grid
+                                cols: 2
+                                spacing: dp(12)
+                                size_hint_y: None
+                                height: self.minimum_height
+                                adaptive_height: True
+
+                        # Quick Actions
+                        MDBoxLayout:
+                            orientation: 'vertical'
+                            spacing: dp(12)
+                            size_hint_y: None
+                            height: self.minimum_height
+                            padding: [0, dp(16), 0, 0]
+
+                            MDLabel:
+                                text: "Quick Actions"
+                                font_style: "H6"
+                                theme_text_color: "Primary"
+                                size_hint_y: None
+                                height: dp(32)
+
+                            MDGridLayout:
+                                cols: 2
+                                spacing: dp(12)
+                                size_hint_y: None
+                                height: self.minimum_height
+
+                                MDRaisedButton:
+                                    text: "START"
+                                    md_bg_color: 0, 0.7, 0.3, 1
+                                    on_release: app.start_bot()
+                                    size_hint_y: None
+                                    height: dp(48)
+
+                                MDRaisedButton:
+                                    text: "STOP"
+                                    md_bg_color: 0.9, 0.2, 0.2, 1
+                                    on_release: app.stop_bot()
+                                    size_hint_y: None
+                                    height: dp(48)
+
+                                MDRaisedButton:
+                                    text: "CHECK CASH"
+                                    md_bg_color: 0.2, 0.5, 0.9, 1
+                                    on_release: app.check_cash()
+                                    size_hint_y: None
+                                    height: dp(48)
+
+                                MDRaisedButton:
+                                    text: "REFRESH"
+                                    on_release: app.refresh_dashboard()
+                                    size_hint_y: None
+                                    height: dp(48)
+
+        # Accounts Screen
+        MDScreen:
+            name: 'accounts'
+            MDBoxLayout:
+                orientation: 'vertical'
+
+                MDTopAppBar:
+                    title: "Accounts"
+                    elevation: 4
+                    left_action_items: [["arrow-left", lambda x: app.go_dashboard()]]
+                    right_action_items: [["plus", lambda x: app.add_account_dialog()]]
+
+                MDScrollView:
+                    MDList:
+                        id: accounts_list
+
+        # Settings Screen
+        MDScreen:
+            name: 'settings'
+            MDBoxLayout:
+                orientation: 'vertical'
+
+                MDTopAppBar:
+                    title: "Settings"
+                    elevation: 4
+                    left_action_items: [["arrow-left", lambda x: app.go_dashboard()]]
+
+                MDScrollView:
+                    MDList:
+                        id: settings_list
+
+        # Terminal/Logs Screen
+        MDScreen:
+            name: 'terminal'
+            MDBoxLayout:
+                orientation: 'vertical'
+
+                MDTopAppBar:
+                    title: "Terminal"
+                    elevation: 4
+                    left_action_items: [["arrow-left", lambda x: app.go_dashboard()]]
+                    right_action_items: [["refresh", lambda x: app.refresh_logs()]]
+
+                MDBoxLayout:
+                    orientation: 'vertical'
+                    padding: dp(16)
+                    spacing: dp(8)
+
+                    MDLabel:
+                        id: terminal_output
+                        text: "Terminal output will appear here..."
+                        font_name: "RobotoMono-Regular"
+                        font_size: sp(12)
+                        theme_text_color: "Secondary"
+                        size_hint_y: None
+                        height: dp(200)
+                        text_size: self.width, None
+
+                    MDRaisedButton:
+                        text: "CLEAR"
+                        on_release: app.clear_terminal()
+                        size_hint_y: None
+                        height: dp(48)
+
+# Custom Widgets
+
+<StatCard@MDCard>:
+    orientation: 'vertical'
+    padding: dp(16)
+    size_hint: None, None
+    size: dp(160), dp(100)
+    elevation: 2
+    radius: [dp(12)]
+
+    MDLabel:
+        id: stat_icon
+        font_style: "H4"
+        halign: "center"
+        theme_text_color: "Primary"
+        size_hint_y: None
+        height: dp(32)
+
+    MDLabel:
+        id: stat_value
+        font_style: "H5"
+        halign: "center"
+        theme_text_color: "Primary"
+        size_hint_y: None
+        height: dp(28)
+
+    MDLabel:
+        id: stat_label
+        font_style: "Caption"
+        halign: "center"
+        theme_text_color: "Secondary"
+        size_hint_y: None
+        height: dp(20)
+
+<AccountCard@MDCard>:
+    orientation: 'horizontal'
+    padding: dp(16)
+    spacing: dp(16)
+    size_hint_y: None
+    height: dp(80)
+    elevation: 1
+    radius: [dp(12)]
+
+    MDIcon:
+        id: account_avatar
+        icon: "account-circle"
+        size: dp(48), dp(48)
+        theme_text_color: "Primary"
+
+    MDBoxLayout:
+        orientation: 'vertical'
+        spacing: dp(4)
+
+        MDLabel:
+            id: account_name
+            text: "Account Name"
+            font_style: "Subtitle1"
+            theme_text_color: "Primary"
+            size_hint_y: None
+            height: dp(24)
+
+        MDLabel:
+            id: account_id
+            text: "User ID"
+            font_style: "Caption"
+            theme_text_color: "Secondary"
+            size_hint_y: None
+            height: dp(18)
+
+        MDLabel:
+            id: account_status
+            text: "Running"
+            font_style: "Caption"
+            theme_text_color: "Success"
+            size_hint_y: None
+            height: dp(18)
+
+    MDIconButton:
+        icon: "chevron-right"
+        theme_text_color: "Secondary"
+        on_release: app.select_account(root.account_id)
+
+<SettingItem@MDBoxLayout>:
+    orientation: 'horizontal'
+    spacing: dp(16)
+    padding: dp(16)
+    size_hint_y: None
+    height: dp(56)
+
+    MDLabel:
+        id: setting_label
+        text: "Setting"
+        font_style: "Subtitle1"
+        theme_text_color: "Primary"
+        size_hint_x: 0.6
+
+    MDWidget:
+        id: setting_control

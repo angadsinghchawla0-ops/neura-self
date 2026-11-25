@@ -1,0 +1,29 @@
+{
+    "1428272787012845608": {
+        "last_reset_date": "2026-11-11",
+        "captchas_solved": 1,
+        "bans_detected": 0,
+        "warnings_detected": 0,
+        "hunt_count": 30,
+        "battle_count": 26,
+        "owo_count": 28,
+        "total_cmd_count": 75,
+        "other_count": 18,
+        "gems_used": 3,
+        "username": "39kq",
+        "quest_data": [],
+        "next_quest_timer": null,
+        "current_cash": 715244,
+        "gambling_stats": {
+            "total_wins": 0,
+            "total_losses": 0,
+            "total_wagered": 0,
+            "net_profit": 0,
+            "current_streak": 0,
+            "best_streak": 0,
+            "worst_streak": 0,
+            "biggest_win": 0,
+            "last_outcome": null
+        }
+    }
+}

@@ -1,0 +1,103 @@
+# python-for-android hooks for ROOTMEOW
+# These hooks customize the APK build
+
+# App name
+app_name = ROOTMEOW
+
+# Package
+package_name = org.rootmeow
+
+# Version
+version = 1.0.0
+
+# Permissions (already in buildozer.spec, but explicit here for clarity)
+android.permissions = [
+    INTERNET,
+    ACCESS_NETWORK_STATE,
+    ACCESS_WIFI_STATE,
+    WAKE_LOCK,
+    VIBRATE,
+    FOREGROUND_SERVICE,
+    FOREGROUND_SERVICE_MEDIA_PLAYBACK,
+    POST_NOTIFICATIONS,
+    RECEIVE_BOOT_COMPLETED,
+]
+
+# Services
+android.services = {
+    "rootmeow": "rootmeow_service.py",
+}
+
+# Receivers
+android.receivers = {
+    "BootReceiver": {
+        "actions": ["android.intent.action.BOOT_COMPLETED"],
+        "permission": "android.permission.RECEIVE_BOOT_COMPLETED",
+    }
+}
+
+# Features
+android.features = [
+    "android.hardware.wifi",
+    "android.hardware.touchscreen",
+]
+
+# Meta-data
+android.meta_data = {
+    "com.google.android.gms.version": "@integer/google_play_services_version",
+}
+
+# Native libraries
+android.ndk = 27c
+android.ndk_api = 24
+
+# Gradle
+android.gradle_dependencies = [
+    "androidx.core:core:1.12.0",
+    "androidx.appcompat:appcompat:1.6.1",
+    "com.google.android.material:material:1.11.0",
+]
+
+android.add_src = []
+
+# Entrypoint
+entrypoint = main.py
+
+# Icon
+icon.filename = dashboard/static/assets/neura.ico
+
+# Presplash
+presplash.filename = dashboard/static/assets/neuraselfbanner.png
+presplash.color = #1a1a2e
+
+# Wake lock
+android.wakelock = True
+
+# Intent filters
+android.intent_filters = {
+    "main": [
+        "android.intent.action.MAIN",
+        "android.intent.category.LAUNCHER",
+    ]
+}
+
+# Allow backup
+android.allow_backup = True
+
+# Large heap
+android.large_heap = True
+
+# Hardware acceleration
+android.hardware_accelerated = True
+
+# Theme
+android.theme = "@style/Theme.AppCompat.NoActionBar"
+
+# Min SDK
+android.min_sdk = 24
+
+# Target SDK
+android.target_sdk = 34
+
+# Compile SDK
+android.compile_sdk = 34
